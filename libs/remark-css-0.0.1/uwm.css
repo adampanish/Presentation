@@ -112,7 +112,7 @@ th, td { padding: 5px; }
 
 /* Add image and change bg color */
 .title-slide {
-  background-image: url(https://raw.githubusercontent.com/adampanish/MPSA2025/master/imgs/sbu_seal.svg);
+  background-image: url(https://raw.githubusercontent.com/adampanish/Presentation/master/imgs/sbu_seal.svg);
   background-position: 3% 5%;
   background-size: 200px;
   background-color: #fff;
