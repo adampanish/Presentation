@@ -224,7 +224,11 @@ background-size: 55%
 
 ## **Appendix** | Variance Decomposition of Trait Anxiety
 
-$$y_{it} = T_i + O_{it} + \delta_{it},\quad t=1,\ldots,T,$$
+$$\begin{align}
+y_{it} &= T_i + O_{it} + \delta_{it},&& T_i \sim \mathcal{N}(\mu_T,\sigma_T^2),&& \delta_{it} \sim \mathcal{N}(0,\sigma_\delta^2),&& t=1,\dots,T, \\[4pt]
+O_{it} &= \beta\, O_{i,t-1} + \varepsilon_{it},&\qquad& \varepsilon_{it} \sim \mathcal{N}(0,\sigma_\varepsilon^2),&& t=2,\dots,T, \\[4pt]
+O_{i1} &\sim \mathcal{N}(0,\sigma_O^2),&\qquad& \rho_{O_{i1},T_i}=0.&&
+\end{align}$$
 
 ---
 background-image: url("imgs/Figure C1.png")
