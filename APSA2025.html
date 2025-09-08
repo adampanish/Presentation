@@ -350,51 +350,31 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
 
-<script>
-  slideshow._releaseMath = function(el) {
-    var i, text, code, codes = el.getElementsByTagName('code');
-    for (i = 0; i < codes.length;) {
-      code = codes[i];
-      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-        text = code.textContent;
-        if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-            /^\$\$(.|\s)+\$\$$/.test(text) ||
-            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-          code.outerHTML = code.innerHTML;
-          continue;
-        }
-      }
-      i++;
-    }
-  };
-  slideshow._releaseMath(document);
-</script>
-
-<!-- 2) Configure and load MathJax v3 -->
-<script>
-  window.MathJax = {
-    tex: {
+<!-- MathJax v2: configure + load from a reliable CDN -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
       inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']]
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true
     }
-  };
+  });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML" async></script>
 
-<!-- 3) Typeset after the slideshow renders each slide -->
+<!-- Ask MathJax to typeset after each slide is shown -->
 <script>
   (function () {
+    if (!window.slideshow) return;
+    // initial typeset (in case MJ loads after the slideshow)
     function typeset() {
-      if (window.MathJax && MathJax.typesetPromise) {
-        MathJax.typesetPromise();
+      if (window.MathJax && MathJax.Hub && MathJax.Hub.Queue) {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
       }
     }
-    // Initial typeset (after MJ loads) + on every slide change
-    if (window.slideshow && slideshow.on) {
-      slideshow.on('afterShowSlide', typeset);
-    }
-    // Also run once after DOM ready (helps when returning to first slide)
-    document.addEventListener('DOMContentLoaded', typeset);
+    typeset();
+    slideshow.on('afterShowSlide', typeset);
   })();
 </script>
   </body>
