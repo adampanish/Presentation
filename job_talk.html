@@ -152,17 +152,17 @@ Differences in neural sensitvity &rarr; differences in **trait anxiety**
 
 # Hypothesis
 
-Income shock <font style="color:white;">+ </font><font style="color:white;face:bold;">Anxiety</font> &rarr; <font style="color:white;face:bold;">Motivational salience &rarr;</font> Demand for insurance
+Income shock <font style="color:white;">+ </font><font style="color:white;face:bold;">Anxiety</font> &rarr; <font style="color:white;face:bold;">Subjective risk&rarr;</font> Demand for insurance
 
 ---
 
 # Hypothesis
 
-Income shock <font style="color:black;">+ </font><font style="color:red;face:bold;">Anxiety</font> &rarr; <font style="color:red;face:bold;">Motivational salience</font> <font style="color:black;face:bold;">&rarr;</font> Demand for insurance
+Income shock <font style="color:black;">+ </font><font style="color:red;face:bold;">Anxiety</font> &rarr; <font style="color:red;face:bold;">Subjective risk</font> <font style="color:black;face:bold;">&rarr;</font> Demand for insurance
 
 ---
 name: methods
-## **Data and Methods** | Does Trait Anxiety Condition Political Responses to Economic Shocks?
+## **Data and Measurement** | Does Trait Anxiety Condition Political Responses to Economic Shocks?
 
 .bold[Sample]: **TAPS** | N &thickapprox; 3,000 | US | panel | national probability | interviewed sporadically, 2011 to 2018
 
@@ -183,20 +183,41 @@ background-size: 50%
 
 --
 
+- Stable = 40%; Semi-stable = 15%; Unique/Error = 45%
+
+--
+
+.bold[DV]: **Unemployment Insurance** 
+"Do you think it should be the government’s responsibility to provide a decent standard of living for the unemployed?"
+- Definitely Should Be, Probably Should Be, Probably Should Not Be, or Definitely Should Not Be
+
+---
+## **Estimation Strategy** | Assembling Synthetic Controls
+
 .bold[Method]: **Panel Matching Estimator**<sup>1</sup>
 
 .footnote[<code><sup>1</sup> Imai, Kim, & Wang 2023</code>
       <font style="color:white;font-size:10px;">_</font>]
 --
 
-- Panelists matched on employment history. Treatment is employment status in last wave of panel.
+- **Treated Unit**: Any person employed at time<sub>t-1</sub> &rarr; unemployed at time<sub>t</sub>.
+
+--
+
+- **Synthetic Control Unit**: Weighted average of units w/ identical employment history for all times < time<sub>t</sub>
 
 --
 
 - Control units weighted using covariate balancing propensity scores (CBPS).<sup>2</sup>
 
 .footnote[<code><sup>2</sup> Imai & Ratkovic 2014</code>]
---
+
+---
+background-image: url("imgs/did plot.png")
+background-position: 50% 70%
+background-size: 70%
+
+## **Estimation Strategy** | Difference-in-Differences
 
 - Difference-in-differences estimated in matched sets and averaged to get the average treatment effect among the treated (ATT).
 
