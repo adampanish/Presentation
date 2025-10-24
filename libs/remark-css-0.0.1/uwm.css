@@ -104,57 +104,6 @@ th, td { padding: 5px; }
   }
 }
 
-<style>
-.hypo { font-size: 1.3rem; line-height: 1.35; }
-
-/* Wrap each targeted phrase with .u-bracket */
-.u-bracket{
-  position: relative;
-  display: inline-block;
-  padding: 0 .35em 1.3em;   /* bottom padding makes room for bracket + label */
-  margin: 0 .15em;
-  color: inherit;           /* bracket inherits your text color */
-}
-
-/* horizontal rule under the span */
-.u-bracket::after{
-  content:"";
-  position:absolute;
-  left:0; right:0;
-  bottom: 1em;
-  border-bottom: 2px solid currentColor;
-}
-
-/* left vertical post */
-.u-bracket::before{
-  content:"";
-  position:absolute;
-  left:0; bottom: 1em;
-  width: 2px; height: .75em;
-  background: currentColor;
-}
-
-/* right vertical post uses the <b>’s ::after so we get 3 pseudo-elements total */
-.u-bracket > b{ font-weight: inherit; position: relative; }
-.u-bracket > b::after{
-  content:"";
-  position:absolute;
-  right: -0.35em;           /* aligns with outer padding */
-  bottom: calc(1em - .1px); /* tiny nudge to meet the rule cleanly */
-  width: 2px; height: .75em;
-  background: currentColor;
-}
-
-/* centered label under the bracket */
-.u-label{
-  position: absolute;
-  left: 50%; transform: translateX(-50%);
-  bottom: 0;
-  font-size: .85rem;
-  white-space: nowrap;
-}
-</style>
-
 /*~~~~~~~~~~~~~~~~~~~~~~*/
 /* UW-Madison additions */
 /*~~~~~~~~~~~~~~~~~~~~~~*/
