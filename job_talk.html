@@ -200,39 +200,64 @@ Job loss <font style="color:black;">&times; </font><font style="color:red;face:b
 
 ---
 <style>
+/* Curly under-bracket + centered label */
 .u-curly{
   position: relative;
   display: inline-block;
-  padding: 0 .35em 1.6em;
-  margin: 0 .15em;
+  padding: 0 .25em 1.2em;   /* bottom padding reserves room for brace + label */
+  margin: 0 .05em;
+  line-height: 1.25;
 }
 .u-curly .u-brace-svg{
   position: absolute;
   left: 0; right: 0;
-  bottom: 1.1em;
-  width: 100%; height: 12px; /* scales with the phrase width */
+  bottom: 0.95em;           /* vertical gap between text and brace */
+  width: 100%;
+  height: 0.8em;            /* brace height; scales with font via em */
+}
+.u-curly .u-brace-svg path{
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
 }
 .u-curly .u-label{
   position: absolute;
-  left: 50%; transform: translateX(-50%);
-  bottom: 0; font-size: .85rem; white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  font-size: .85rem;
+  white-space: nowrap;
 }
 </style>
 
 # Hypothesis and Empirical Tests
 
-Job loss &times; *high* trait anxiety &rarr; *increased* felt vulnerability
-
+Job loss &times; <em>high</em> trait anxiety &rarr;
 <span class="u-curly">
-      **increased** support for employment-related social welfare
+  **increased** felt vulnerability
   <svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
-    <!-- A simple curly shape; tweak path as desired -->
     <path d="M2,10 C10,10 10,2 20,2 L40,2
              C50,2 50,10 60,10
              C50,10 50,18 40,18 L20,18
-             C10,18 10,10 2,10" fill="none" stroke="currentColor" stroke-width="2" />
+             C10,18 10,10 2,10"/>
   </svg>
   <span class="u-label">Study 2</span>
+</span>
+
+<br><br>
+
+<strong>increased</strong>
+<span class="u-curly">
+  support for employment-related social welfare
+  <svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M2,10 C10,10 10,2 20,2 L40,2
+             C50,2 50,10 60,10
+             C50,10 50,18 40,18 L20,18
+             C10,18 10,10 2,10"/>
+  </svg>
+  <span class="u-label">Study 1</span>
 </span>
 
 ---
