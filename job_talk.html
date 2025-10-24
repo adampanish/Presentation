@@ -268,6 +268,8 @@ Job loss &times; **high** trait anxiety &rarr;
 
 # Hypothesis and Empirical Tests
 
+--
+
 Job loss &times; **high** trait anxiety &rarr;
       <span class="u-curly">**increased** felt vulnerability<svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><text color="white" x="0" y="16" textLength="100" lengthAdjust="spacingAndGlyphs" font-size="18" font-family="STIX Two Math, Latin Modern Math, Cambria Math, 'Times New Roman', serif">⏟</text></svg></span> &rarr;
       <span class="u-curly">**increased** support for job-related policy<svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><text x="0" y="16" textLength="100" lengthAdjust="spacingAndGlyphs" font-size="18" font-family="STIX Two Math, Latin Modern Math, Cambria Math, 'Times New Roman', serif">⏟</text></svg><span class="u-label"><br><br><br>Study 1</span></span>
@@ -287,8 +289,7 @@ Job loss &times; **high** trait anxiety &rarr;
       <span class="u-curly">**increased** support for job-related policy<svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><text x="0" y="16" textLength="100" lengthAdjust="spacingAndGlyphs" font-size="18" font-family="STIX Two Math, Latin Modern Math, Cambria Math, 'Times New Roman', serif">⏟</text></svg><span class="u-label">
       <br><br><br>**Study 1**<br>
       Panel Data<br>
-      Two US National Probability Samples<br>
-      Difference-in-Differences (panel matching/weighting)
+      Two US Probability Samples
     </span></span>
 
 ---
@@ -298,38 +299,39 @@ Job loss &times; **high** trait anxiety &rarr;
       <span class="u-curly">**increased** felt vulnerability<svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><text x="0" y="16" textLength="100" lengthAdjust="spacingAndGlyphs" font-size="18" font-family="STIX Two Math, Latin Modern Math, Cambria Math, 'Times New Roman', serif">⏟</text></svg><span class="u-label">
       <br><br><br>**Study 2**<br>
       Survey Experiment<br>
-      US Nationally Representative Quota Sample (Bovitz)<br>
-      Text Analysis (structural topic models)
+      Text Analysis<br>
+      One US Quota Sample
     </span></span> &rarr;
       <span class="u-curly">**increased** support for job-related policy<svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><text x="0" y="16" textLength="100" lengthAdjust="spacingAndGlyphs" font-size="18" font-family="STIX Two Math, Latin Modern Math, Cambria Math, 'Times New Roman', serif">⏟</text></svg><span class="u-label"><br><br><br>Study 1</span></span>
 
 ---
 name: methods
-## **Study 1** | Does Trait Anxiety Condition Political Responses to Unemployment?
-
---
-background-image: url("imgs/Figure A1.png")
-background-position: 90% 45%
-background-size: 52.5%
-
-.bold[Sample]: **TAPS** | N &thickapprox; 3,000 | US | panel | national probability | interviewed sporadically, 2011 to 2018
+## **Study 1** | Does Trait Anxiety Condition Political Responses to Job Loss?
 
 --
 
-.bold[Treatment]: **Job loss**
+.bold[Samples]: **The American Panel Survey (TAPS)** | ~1,000 complete cases | interviewed sporadically, 2011 to 2018
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**American National Election Studies (ANES) 2016-2024 Panel** | ~1,600 complete cases | interviewed in 2016, 2020, and 2024
+
+--
+
+.bold[Independent Variable]: **Job Loss**
+- "We’d like to know if you are working now, temporarily laid off, or are you unemployed, retired, permanently disabled, a homemaker, a student, or what?"
+ - working now = 0
+ - TAPS: temporarily laid off = 1
+ - ANES: temporarily laid off, out of work or laid off at any time during the last six months = 1
+ - unemployed, retired, permanently disabled, homemaker, student = NA
 
 --
 
 .bold[Moderator]: **Trait Anxiety**
 
---
-
-"I see myself as anxious, easily upset"
-- 1) disagree strongly ... 7) agree strongly
+- "I see myself as anxious, easily upset" 
+ - 1) disagree strongly ... 7) agree strongly
 
 --
 
-- [Stable trait values](#variance-decomposition) extracted using SEM
+- TAPS: [Stable trait values](#variance-decomposition) extracted using SEM
 
 --
 
