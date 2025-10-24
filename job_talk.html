@@ -204,23 +204,25 @@ Job loss <font style="color:black;">&times; </font><font style="color:red;face:b
 .u-curly{
   position: relative;
   display: inline-block;
-  padding: 0 .25em 1.2em;   /* bottom padding reserves room for brace + label */
+  padding: 0 .25em 1.25em;      /* room for brace + label */
   margin: 0 .05em;
   line-height: 1.25;
 }
 .u-curly .u-brace-svg{
   position: absolute;
   left: 0; right: 0;
-  bottom: 0.95em;           /* vertical gap between text and brace */
+  bottom: 0.95em;               /* gap between text and brace */
   width: 100%;
-  height: 0.8em;            /* brace height; scales with font via em */
+  height: 0.9em;                /* brace height (scales with font) */
 }
 .u-curly .u-brace-svg path{
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
-  vector-effect: non-scaling-stroke;
+  vector-effect: non-scaling-stroke;  /* keeps stroke from warping */
   stroke-linecap: round;
+  stroke-linejoin: round;
+  shape-rendering: geometricPrecision;
 }
 .u-curly .u-label{
   position: absolute;
@@ -236,12 +238,18 @@ Job loss <font style="color:black;">&times; </font><font style="color:red;face:b
 
 Job loss &times; <em>high</em> trait anxiety &rarr;
 <span class="u-curly">
-  **increased** felt vulnerability
-  <svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M2,10 C10,10 10,2 20,2 L40,2
-             C50,2 50,10 60,10
-             C50,10 50,18 40,18 L20,18
-             C10,18 10,10 2,10"/>
+  <em>increased felt vulnerability</em>
+  <!-- True underbrace shape -->
+  <svg class="u-brace-svg" viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true">
+    <path d="
+      M 1,15
+      C 10,15 10,4 22,4
+      L 52,4
+      C 64,4 64,15 73,15
+      C 64,15 64,26 52,26
+      L 22,26
+      C 10,26 10,15 1,15
+    "/>
   </svg>
   <span class="u-label">Study 2</span>
 </span>
@@ -251,11 +259,17 @@ Job loss &times; <em>high</em> trait anxiety &rarr;
 <strong>increased</strong>
 <span class="u-curly">
   support for employment-related social welfare
-  <svg class="u-brace-svg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M2,10 C10,10 10,2 20,2 L40,2
-             C50,2 50,10 60,10
-             C50,10 50,18 40,18 L20,18
-             C10,18 10,10 2,10"/>
+  <!-- Same brace, reused -->
+  <svg class="u-brace-svg" viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true">
+    <path d="
+      M 1,15
+      C 10,15 10,4 22,4
+      L 52,4
+      C 64,4 64,15 73,15
+      C 64,15 64,26 52,26
+      L 22,26
+      C 10,26 10,15 1,15
+    "/>
   </svg>
   <span class="u-label">Study 1</span>
 </span>
