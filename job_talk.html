@@ -200,17 +200,17 @@ Job loss <font style="color:black;">&times; </font><font style="color:red;face:b
 
 ---
 <style>
-/* knobs you can tweak quickly */
+/* quick knobs */
 :root{
-  --brace-gap: 1.25em;   /* distance from text to brace */
-  --brace-height: 1.6em; /* total brace height */
-  --brace-stroke: 2.25;  /* line thickness */
+  --brace-gap: 1.1em;      /* distance from text to brace */
+  --brace-height: 1.8em;   /* overall height of brace (bigger = more curly) */
+  --brace-stroke: 2.5;     /* line thickness */
 }
 
 .u-curly{
   position: relative;
   display: inline-block;
-  padding: 0 .25em calc(var(--brace-gap) + .9em); /* room for brace + label */
+  padding: 0 .25em calc(var(--brace-gap) + .9em); /* reserve room for brace + label */
   margin: 0 .05em;
   line-height: 1.25;
 }
@@ -218,46 +218,52 @@ Job loss <font style="color:black;">&times; </font><font style="color:red;face:b
 .u-curly .u-brace-svg{
   position: absolute;
   left: 0; right: 0;
-  bottom: var(--brace-gap);   /* put the brace lower so the curls are visible */
+  bottom: var(--brace-gap);         /* lower it so the curl is visible */
   width: 100%;
-  height: var(--brace-height);
+  height: var(--brace-height);      /* adjust “aspect ratio” of the curl */
   overflow: visible;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .u-curly .u-brace-svg path{
   fill: none;
   stroke: currentColor;
   stroke-width: var(--brace-stroke);
-  vector-effect: non-scaling-stroke;
+  vector-effect: non-scaling-stroke;   /* stops stroke from warping when stretched */
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .u-curly .u-label{
   position: absolute;
-  left: 50%; transform: translateX(-50%);
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   font-size: .85rem;
   white-space: nowrap;
 }
 </style>
 
-# Hypothesis and Empirical Tests
+<!-- ===================== SLIDE CONTENT ===================== -->
 
 Job loss &times; <em>high</em> trait anxiety &rarr;
 <span class="u-curly">
   <em>increased felt vulnerability</em>
   <svg class="u-brace-svg" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true">
-    <!-- under-brace opening upward -->
-    <path d="
-      M 2,30
-      C 18,30 18,10 38,10
-      L 92,10
-      C 108,10 108,30 122,30
-      C 108,30 108,50 92,50
-      L 38,50
-      C 18,50 18,30 2,30
-    "/>
+    <!-- Define a clean downward-opening brace once ... -->
+    <defs>
+      <path id="brace-shape"
+            d="M 2,30
+               C 18,30 18,10 38,10
+               L 92,10
+               C 108,10 108,30 122,30
+               C 108,30 108,50 92,50
+               L 38,50
+               C 18,50 18,30 2,30" />
+    </defs>
+    <!-- ... then FLIP IT VERTICALLY to face upward under the text -->
+    <use href="#brace-shape" transform="scale(1,-1) translate(0,-60)"></use>
   </svg>
   <span class="u-label">Study 2</span>
 </span>
@@ -266,17 +272,9 @@ Job loss &times; <em>high</em> trait anxiety &rarr;
 
 <strong>increased</strong>
 <span class="u-curly">
-  support for job-related social policy
+  support for job-related policy
   <svg class="u-brace-svg" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true">
-    <path d="
-      M 2,30
-      C 18,30 18,10 38,10
-      L 92,10
-      C 108,10 108,30 122,30
-      C 108,30 108,50 92,50
-      L 38,50
-      C 18,50 18,30 2,30
-    "/>
+    <use href="#brace-shape" transform="scale(1,-1) translate(0,-60)"></use>
   </svg>
   <span class="u-label">Study 1</span>
 </span>
