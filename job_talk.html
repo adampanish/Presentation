@@ -200,23 +200,22 @@ Job loss <font style="color:black;">&times; </font><font style="color:red;face:b
 
 ---
 <style>
-:root{
-  --brace-gap: 0.5em;     /* distance from text to brace */
-  --brace-height: 2.5em;   /* height of the brace box */
-  --brace-stroke: .6;       /* not used here, but keep if you try paths later */
+:root {
+  --brace-gap: 0.6em;      /* distance from text to brace (smaller = move closer up) */
+  --brace-height: 1.2em;   /* height of brace area */
 }
 
 /* container */
-.u-curly{
+.u-curly {
   position: relative;
   display: inline-block;
-  padding: 0 .25em calc(var(--brace-gap) + .95em); /* room for brace + label */
+  padding: 0 .25em calc(var(--brace-gap) + .95em);
   margin: 0 .05em;
   line-height: 1.25;
 }
 
-/* the brace */
-.u-curly .u-brace-svg{
+/* svg brace */
+.u-curly .u-brace-svg {
   position: absolute;
   left: 0; right: 0;
   bottom: var(--brace-gap);
@@ -227,8 +226,18 @@ Job loss <font style="color:black;">&times; </font><font style="color:red;face:b
   z-index: 1;
 }
 
-/* center label */
-.u-curly .u-label{
+/* the glyph itself */
+.u-curly .u-brace-svg text {
+  font-size: 14px;                 /* smaller = thinner brace */
+  font-weight: 300;                /* lighter weight for thinness */
+  font-family: "STIX Two Math", "Latin Modern Math",
+               "Cambria Math", "Times New Roman", serif;
+  dominant-baseline: middle;
+  fill: currentColor;
+}
+
+/* label */
+.u-curly .u-label {
   position: absolute;
   left: 50%; transform: translateX(-50%);
   bottom: 0;
