@@ -374,13 +374,7 @@ Inline: The ATT is $ \hat{\tau} = \bar{Y}_1 - \bar{Y}_0 $.
 
 Display:
 
-\[
-\begin{aligned}
-Y_{it} &= \beta_0 + \beta_1\,\text{LaidOff}_{it} + \beta_2\,\text{Anxiety}_i \\
-       &\quad+ \beta_3(\text{LaidOff}_{it}\times\text{Anxiety}_i)
-       + \alpha_i + \lambda_t + \varepsilon_{it}.
-\end{aligned}
-\]
+$$ Y_{it} = \alpha_i + \lambda_t + \tau D_{it} + X_{it}'\gamma + \varepsilon_{it} $$
 
 ---
 background-image: url("imgs/did plot 1.png")
