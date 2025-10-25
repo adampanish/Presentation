@@ -342,39 +342,103 @@ background-size: 95%
  - 1) Definitely Should Be, 2) Probably Should Be, 3) Probably Should Not Be, 4) Definitely Should Not Be
 
 ---
-## **Estimation Strategy** | Panel Matching
+## **Estimation Strategy** | Matching + Difference-in-Differences
 
 --
 
-.bold[Method]: **Panel Matching Estimator**<sup>1</sup>
+.bold[Step 1]: **Panel Matching**<sup>1</sup>
 
 .footnote[<code><sup>1</sup> Imai, Kim, & Wang 2023</code>
       <font style="color:white;font-size:10px;">_</font>]
---
-
-- **Treated Unit:** Any person employed at time<sub>t-1</sub> &rarr; laid off at time<sub>t</sub>.
 
 --
 
-- **Synthetic Control:** Weighted average of all people...
- - with same employment history as the treated unit prior to time<sub>t</sub>
- - who are employed at time<sub>t</sub>
+- Goal: For each person laid off during panel, identify valid comparison group
 
 --
 
-- Control units weighted using covariate balancing propensity scores (CBPS).<sup>2</sup>
+- **$Y_1$:** Any person employed &rarr; laid off during panel.
+
+--
+
+- **$Y_0$:** All people with same work history as $Y_1$ prior to when $Y_1$ is laid off who .bold[remain] employed when $Y_1$ is laid off
+ - weighted using covariate balancing propensity scores (CBPS).<sup>2</sup>
 
 .footnote[<code><sup>2</sup> Imai & Ratkovic 2014</code>]
+--
+background-image: url("imgs/matching1.png")
+background-position: 50% 92.5%
+background-size: 70%
 
 --
+background-image: url("imgs/matching2.png")
+background-position: 50% 92.5%
+background-size: 70%
 
-Difference-in-Differences Model
+--
+background-image: url("imgs/matching3.png")
+background-position: 50% 92.5%
+background-size: 70%
 
-Inline: The ATT is $ \hat{\tau} = \bar{Y}_1 - \bar{Y}_0 $.
+--
+background-image: url("imgs/matching4.png")
+background-position: 50% 92.5%
+background-size: 70%
 
-Display:
+--
+background-image: url("imgs/matching5.png")
+background-position: 50% 92.5%
+background-size: 70%
 
-$$ Y_{it} = \alpha_i + \lambda_t + \tau D_{it} + X_{it}'\gamma + \varepsilon_{it} $$
+--
+background-image: url("imgs/matching6.png")
+background-position: 50% 92.5%
+background-size: 70%
+
+--
+background-image: url("imgs/matching7.png")
+background-position: 50% 92.5%
+background-size: 70%
+
+--
+background-image: url("imgs/matching8.png")
+background-position: 50% 92.5%
+background-size: 70%
+
+--
+background-image: url("imgs/matching9.png")
+background-position: 50% 92.5%
+background-size: 70%
+
+--
+background-image: url("imgs/matching10.png")
+background-position: 50% 92.5%
+background-size: 70%
+
+---
+
+## **Checking Assumptions** | Conditional Parallel Trends
+
+--
+background-image: url("imgs/Figure 2 (blank).png")
+background-position: 50% 70%
+background-size: 70%
+
+--
+background-image: url("imgs/Figure 2 1.png")
+background-position: 50% 70%
+background-size: 70%
+
+--
+background-image: url("imgs/Figure 2.png")
+background-position: 50% 70%
+background-size: 70%
+
+---
+
+.bold[Step 2]: **Difference-in-Differences**
+
+
 
 ---
 background-image: url("imgs/did plot 1.png")
@@ -401,25 +465,6 @@ background-size: 70%
 --
 background-image: url("imgs/did plot 5.png")
 background-position: 50% 92.5%
-background-size: 70%
-
----
-
-## **Checking Assumptions** | Conditional Parallel Trends
-
---
-background-image: url("imgs/Figure 2 (blank).png")
-background-position: 50% 70%
-background-size: 70%
-
---
-background-image: url("imgs/Figure 2 1.png")
-background-position: 50% 70%
-background-size: 70%
-
---
-background-image: url("imgs/Figure 2.png")
-background-position: 50% 70%
 background-size: 70%
 
 ---
