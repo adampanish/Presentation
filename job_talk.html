@@ -370,8 +370,12 @@ background-size: 95%
 
 Difference-in-Differences Model
 
+Inline: The ATT is $ \hat{\tau} = \bar{Y}_1 - \bar{Y}_0 $.
+
+Display:
+
 $$
-Y_{it} = \alpha_i + \lambda_t + \tau D_{it} + X_{it}'\gamma + \varepsilon_{it}
+Y_{it} = \alpha_i + \lambda_t + \tau D_{it} + X_{it}'\gamma + \varepsilon_{it}.
 $$
 
 ---
@@ -773,32 +777,47 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
 <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']]
-    },
-    options: {
-      // Don't typeset inside code or pre blocks
-      skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+  (function () {
+    function renderAll() {
+      var area = document.querySelector('.remark-slides-area') || document.body;
+      renderMathInElement(area, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "$",  right: "$",  display: false},
+          {left: "\\(", right: "\\)", display: false}
+        ],
+        ignoredTags: ['script','noscript','style','textarea','pre','code']
+      });
     }
-  };
-</script>
-<script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 
-<script>
-  // Re-typeset after each slide is shown (and once on load)
-  function retypeset() {
-    if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
-  }
-  // initial pass (in case MathJax arrives late)
-  document.addEventListener('DOMContentLoaded', retypeset);
+    // Initial render (after DOM ready)
+    if (document.readyState !== 'loading') renderAll();
+    else document.addEventListener('DOMContentLoaded', renderAll);
 
-  if (window.slideshow && slideshow.on) {
-    slideshow.on('afterShowSlide', retypeset);
-  }
+    // Re-render after each slide shows
+    if (window.slideshow && slideshow.on) {
+      slideshow.on('afterShowSlide', renderAll);
+    } else {
+      // If slideshow not ready yet, try again once it exists
+      window.addEventListener('load', function () {
+        if (window.slideshow && slideshow.on) {
+          slideshow.on('afterShowSlide', renderAll);
+        }
+      });
+    }
+  })();
 </script>
+
+<style>
+/* Trim big margins on display math inside slides (optional) */
+.katex-display { margin: .5em 0; }
+</style>
     
   </body>
 </html>
