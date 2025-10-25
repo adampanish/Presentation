@@ -320,21 +320,16 @@ name: methods
 
 .bold[Independent Variable]: **Job Loss**
 - working now = 0
+--
 - laid off (ANES: within the last six months) = 1
 - unemployed, retired, disabled, homemaker, student = NA
 
 --
-
+name: data-methods
 .bold[Moderator]: **Trait Anxiety**
-- "I see myself as anxious, easily upset" 
- - 1) disagree strongly ... 7) agree strongly
-
---
-background-image: url("imgs/Figure B1.png")
-background-position: 95% 97.5%
-background-size: 45%
-
-- TAPS: Stable trait values extracted
+- "I see myself as anxious, easily upset" (1. disagree strongly ... 7. agree strongly)
+ - ANES: Measured in first wave (2016)
+ - TAPS: [Stable trait values extracted using SEM](#variance-decomposition)
 
 ---
 background-image: url("imgs/anes.taps.hist.png")
@@ -373,6 +368,14 @@ background-size: 85%
 - Control units weighted using covariate balancing propensity scores (CBPS).<sup>2</sup>
 
 .footnote[<code><sup>2</sup> Imai & Ratkovic 2014</code>]
+
+--
+
+Difference-in-Differences Model
+
+$$
+Y_{it} = \alpha_i + \lambda_t + \tau D_{it} + X_{it}'\gamma + \varepsilon_{it}
+$$
 
 ---
 background-image: url("imgs/did plot 1.png")
@@ -614,6 +617,17 @@ background-padding: 100px
   &lt;img src="https://www.svgrepo.com/show/71817/website-home.svg" style="height: 20px;"&gt;
   adampanish.com
 &lt;/span&gt;
+
+---
+name: variance-decomposition
+background-image: url("imgs/Figure B1.png")
+background-position: 50% 75%
+background-size: 45%
+
+## **Appendix** | Variance Decomposition of Trait Anxiety in TAPS
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Back to Results](#data-methods)
 
 ---
 name: alternative-outcome-variables
