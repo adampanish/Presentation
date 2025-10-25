@@ -342,18 +342,14 @@ background-size: 95%
  - 1) Definitely Should Be, 2) Probably Should Be, 3) Probably Should Not Be, 4) Definitely Should Not Be
 
 ---
-## **Estimation Strategy** | Matching + Difference-in-Differences
+## **Estimation Step 1** | Matching
 
 --
 
-.bold[Step 1]: **Matching**<sup>1</sup>
+- Goal: For each person laid off during panel, match with valid comparison group<sup>1</sup>
 
 .footnote[<code><sup>1</sup> Imai, Kim, & Wang 2023</code>
       <font style="color:white;font-size:10px;">_</font>]
-
---
-
-- Goal: For each person laid off during panel, match with valid comparison group
 
 --
 
@@ -373,48 +369,48 @@ background-size: 95%
 ---
 background-image: url("imgs/matching1.jpg")
 background-position: 50% 90%
-background-size: 85%
+background-size: 90%
 
-## Matching Job-Losers with Similar Job-Keepers
+## Matching Job-Losers ($Y_1$) with Similar Job-Keepers ($Y_0$)
 
----
+--
 background-image: url("imgs/matching2.jpg")
 background-position: 50% 90%
-background-size: 85%
+background-size: 90%
 
 --
 background-image: url("imgs/matching3.jpg")
 background-position: 50% 90%
-background-size: 85%
+background-size: 90%
 
 --
 background-image: url("imgs/matching4.jpg")
 background-position: 50% 90%
-background-size: 85%
+background-size: 90%
 
 --
 background-image: url("imgs/matching5.jpg")
 background-position: 50% 90%
-background-size: 85%
+background-size: 90%
 
 --
 background-image: url("imgs/matching6.jpg")
 background-position: 50% 90%
-background-size: 85%
+background-size: 90%
 
 --
 background-image: url("imgs/matching7.jpg")
 background-position: 50% 90%
-background-size: 85%
+background-size: 90%
 
 --
 background-image: url("imgs/matching8.jpg")
 background-position: 50% 90%
-background-size: 85%
+background-size: 90%
 
 ---
 
-## Ensuring Job-Losers are Similar to Job-Keepers
+## Ensuring Job-Losers ($Y_1$) are Similar to Job-Keepers ($Y_0$)
 
 --
 background-image: url("imgs/Figure 2 (blank).png")
@@ -432,35 +428,34 @@ background-position: 50% 70%
 background-size: 70%
 
 ---
-## **Estimation Strategy** | Matching + Difference-in-Differences
+## **Estimation Step 2** | Difference-in-Differences
 
-.bold[Step 2]: **Difference-in-Differences**
-- Key Assumption: Were $Y_1$ not laid off, $Y_0 - Y_1$ would remain constant through last wave
+Key Assumption: Were $Y_1$ not laid off, $Y_0 - Y_1$ would remain constant through last wave
 
 --
 background-image: url("imgs/did plot 1.png")
 background-position: 50% 95%
-background-size: 60%
+background-size: 70%
 
 --
 background-image: url("imgs/did plot 2.png")
 background-position: 50% 95%
-background-size: 60%
+background-size: 70%
 
 --
 background-image: url("imgs/did plot 3.png")
 background-position: 50% 95%
-background-size: 60%
+background-size: 70%
 
 --
 background-image: url("imgs/did plot 4.png")
 background-position: 50% 95%
-background-size: 60%
+background-size: 70%
 
 --
 background-image: url("imgs/did plot 5.png")
 background-position: 50% 95%
-background-size: 60%
+background-size: 70%
 
 ---
 name: figure-4
