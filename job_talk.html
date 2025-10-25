@@ -773,21 +773,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
 
-<!-- Ask MathJax to typeset after each slide is shown -->
-<script>
-  (function () {
-    if (!window.slideshow) return;
-    // initial typeset (in case MJ loads after the slideshow)
-    function typeset() {
-      if (window.MathJax && MathJax.Hub && MathJax.Hub.Queue) {
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-      }
-    }
-    typeset();
-    slideshow.on('afterShowSlide', typeset);
-  })();
-</script>
-
 <script>
   window.MathJax = {
     tex: {
