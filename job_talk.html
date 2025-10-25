@@ -333,7 +333,7 @@ name: data-methods
 ---
 background-image: url("imgs/anes.taps.hist.png")
 background-position: 50% 50%
-background-size: 100%
+background-size: 95%
 
 ---
 
@@ -779,19 +779,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
 
-<!-- MathJax v2: configure + load from a reliable CDN -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    }
-  });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML" async></script>
-
 <!-- Ask MathJax to typeset after each slide is shown -->
 <script>
   (function () {
@@ -806,5 +793,33 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     slideshow.on('afterShowSlide', typeset);
   })();
 </script>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']]
+    },
+    options: {
+      // Don't typeset inside code or pre blocks
+      skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+    }
+  };
+</script>
+<script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+<script>
+  // Re-typeset after each slide is shown (and once on load)
+  function retypeset() {
+    if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+  }
+  // initial pass (in case MathJax arrives late)
+  document.addEventListener('DOMContentLoaded', retypeset);
+
+  if (window.slideshow && slideshow.on) {
+    slideshow.on('afterShowSlide', retypeset);
+  }
+</script>
+    
   </body>
 </html>
