@@ -19,9 +19,9 @@ class: center, middle, inverse, title-slide
 ### Adam R. Panish
 ### Stony Brook University
 <br><br>
-### Department of Political Science
-### Florida State University
-### October 27, 2025
+### Department of Political Science and International Relations
+### Loyola Marymount University
+### November 5, 2025
 
 ---
 # Do Material Circumstances Shape Political Attitudes?
@@ -146,7 +146,7 @@ Differences in **trait anxiety** &rarr; differences in sensitivity to stressors.
 
 --
 
-- Highly stable across the lifespan, heritable<sup>2</sup>
+- Highly stable across the lifespan<sup>2</sup>
 
 .footnote[<code><sup>2</sup> Hovenkamp-Hermelink et al. 2019; Nivard et al. 2015</code>]
 
@@ -345,11 +345,20 @@ background-position: 50% 50%
 background-size: 90%
 
 ---
-## **Estimation Step 1** | Matching
+name: matching-methods
+## **Estimation Step 1** | Matching + Weighting
 
 --
 
-- Goal: For each person laid off during panel, match with valid comparison group<sup>1</sup>
+- Problem: Confounder could cause job loss and attitude change (even within-person)
+
+--
+
+- Solution: Benchmark within-person effect on group w/ same time-varying/time-invariant characteristics
+
+--
+
+- Strategy: For each person laid off during panel, match with valid comparison group<sup>1</sup>
 
 .footnote[<code><sup>1</sup> Imai, Kim, & Wang 2023</code>
       <font style="color:white;font-size:10px;">_</font>]
@@ -362,74 +371,13 @@ background-size: 90%
 
 - **$Y_0$:** Weighted average of all people who ...
  - have the same work history as $Y_1$ prior to when $Y_1$ is laid off 
- - .bold[remain] employed when $Y_1$ is laid off
+ - .bold[remain] employed when $Y_1$ is laid off ([see matching example](#matching-demo))
 
 --
 
 - $Y_0$ weighted to resemble $Y_1$ using covariate balancing propensity scores (CBPS).<sup>2</sup>
 
 .footnote[<code><sup>2</sup> Imai & Ratkovic 2014</code>]
----
-background-image: url("imgs/matching1.jpg")
-background-position: 50% 90%
-background-size: 90%
-
-## Matching Job-Losers ($Y_1$) with Similar Job-Keepers ($Y_0$)
-
---
-background-image: url("imgs/matching2.jpg")
-background-position: 50% 90%
-background-size: 90%
-
---
-background-image: url("imgs/matching3.jpg")
-background-position: 50% 90%
-background-size: 90%
-
---
-background-image: url("imgs/matching4.jpg")
-background-position: 50% 90%
-background-size: 90%
-
---
-background-image: url("imgs/matching5.jpg")
-background-position: 50% 90%
-background-size: 90%
-
---
-background-image: url("imgs/matching6.jpg")
-background-position: 50% 90%
-background-size: 90%
-
---
-background-image: url("imgs/matching7.jpg")
-background-position: 50% 90%
-background-size: 90%
-
---
-background-image: url("imgs/matching8.jpg")
-background-position: 50% 90%
-background-size: 90%
-
----
-
-## Ensuring Job-Losers ($Y_1$) are Similar to Job-Keepers ($Y_0$)
-
---
-background-image: url("imgs/Figure 2 (blank).png")
-background-position: 50% 90%
-background-size: 70%
-
---
-background-image: url("imgs/Figure 2 1.png")
-background-position: 50% 90%
-background-size: 70%
-
---
-background-image: url("imgs/Figure 2.png")
-background-position: 50% 90%
-background-size: 70%
-
 ---
 ## **Estimation Step 2** | Difference-in-Differences
 
@@ -469,6 +417,25 @@ background-size: 78%
 background-image: url("imgs/did plot 7.png")
 background-position: 50% 97.5%
 background-size: 78%
+
+---
+
+## Ensuring Job-Losers ($Y_1$) are Similar to Job-Keepers ($Y_0$)
+
+--
+background-image: url("imgs/Figure 2 (blank).png")
+background-position: 50% 90%
+background-size: 70%
+
+--
+background-image: url("imgs/Figure 2 1.png")
+background-position: 50% 90%
+background-size: 70%
+
+--
+background-image: url("imgs/Figure 2.png")
+background-position: 50% 90%
+background-size: 70%
 
 ---
 ## **TAPS Results** | Does Trait Anxiety Moderate the Effect of Job Loss?
@@ -653,6 +620,50 @@ background-size: 70%
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 [Back to Results](#data-methods)
+---
+name: matching-demo
+background-image: url("imgs/matching1.jpg")
+background-position: 50% 90%
+background-size: 90%
+
+## Matching Job-Losers ($Y_1$) with Similar Job-Keepers ($Y_0$)
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Back to Results](#matching-methods)
+
+--
+background-image: url("imgs/matching2.jpg")
+background-position: 50% 90%
+background-size: 90%
+
+--
+background-image: url("imgs/matching3.jpg")
+background-position: 50% 90%
+background-size: 90%
+
+--
+background-image: url("imgs/matching4.jpg")
+background-position: 50% 90%
+background-size: 90%
+
+--
+background-image: url("imgs/matching5.jpg")
+background-position: 50% 90%
+background-size: 90%
+
+--
+background-image: url("imgs/matching6.jpg")
+background-position: 50% 90%
+background-size: 90%
+
+--
+background-image: url("imgs/matching7.jpg")
+background-position: 50% 90%
+background-size: 90%
+
+--
+background-image: url("imgs/matching8.jpg")
+background-position: 50% 90%
+background-size: 90%
 
 ---
 name: alternative-trait-anxiety-binnings-taps
