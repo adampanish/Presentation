@@ -334,13 +334,14 @@ background-image: url("imgs/anes dv.png")
 background-position: 50% 50%
 background-size: 90%
 
+<!--
 ---
 name: matching-methods
-## **Estimation Step 1** | Matching + Weighting
+## **Estimation** | Matching + Weighting --> Difference-in-Differences
 
 --
 
-- Problem: Job loss is not random (time-invariant/time-varying confounders)
+- Problem: Job loss isn't completely random
 
 --
 
@@ -364,10 +365,13 @@ name: matching-methods
 - $Y_0$ weighted to resemble $Y_1$ using covariate balancing propensity scores (CBPS).<sup>2</sup>
 
 .footnote[<code><sup>2</sup> Imai & Ratkovic 2014</code>]
+-->
 ---
-## **Estimation Step 2** | Difference-in-Differences
+name: did-methods
+## **Estimation** | Matching + Weighting --> Difference-in-Differences
 
-Key Assumption: If $Y_1$ weren't laid off at time t-0, $Y_0 - Y_1$ would remain constant from t-1 &rarr; t-0
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Covariate Balance Checks](#covariate-balance)
 
 --
 background-image: url("imgs/did plot 1.png")
@@ -403,25 +407,6 @@ background-size: 78%
 background-image: url("imgs/did plot 7.png")
 background-position: 50% 97.5%
 background-size: 78%
-
----
-
-## Ensuring Job-Losers ($Y_1$) are Similar to Job-Keepers ($Y_0$)
-
---
-background-image: url("imgs/Figure 2 (blank).png")
-background-position: 50% 90%
-background-size: 70%
-
---
-background-image: url("imgs/Figure 2 1.png")
-background-position: 50% 90%
-background-size: 70%
-
---
-background-image: url("imgs/Figure 2.png")
-background-position: 50% 90%
-background-size: 70%
 
 ---
 ## **TAPS Results** | Does Trait Anxiety Moderate the Effect of Job Loss?
@@ -597,6 +582,16 @@ background-padding: 100px
 &lt;/span&gt;
 
 ---
+name: covariate-balance
+background-image: url("imgs/Figure 2.png")
+background-position: 50% 90%
+background-size: 70%
+
+## Ensuring Job-Losers ($Y_1$) are Similar to Job-Keepers ($Y_0$)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Back to Methods](#did-methods)
+---
 name: variance-decomposition
 background-image: url("imgs/Figure B1.png")
 background-position: 50% 75%
@@ -605,7 +600,7 @@ background-size: 70%
 ## Variance Decomposition of Trait Anxiety in TAPS
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-[Back to Results](#data-methods)
+[Back to Methods](#data-methods)
 ---
 name: matching-demo
 background-image: url("imgs/matching1.jpg")
@@ -614,7 +609,7 @@ background-size: 90%
 
 ## Matching Job-Losers ($Y_1$) with Similar Job-Keepers ($Y_0$)
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-[Back to Results](#matching-methods)
+[Back to Methods](#did-methods)
 
 --
 background-image: url("imgs/matching2.jpg")
