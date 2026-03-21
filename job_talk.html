@@ -334,38 +334,6 @@ background-image: url("imgs/anes dv.png")
 background-position: 50% 50%
 background-size: 90%
 
-
-<!-- ---
-name: matching-methods
-## **Estimation** | Matching + Weighting --> Difference-in-Differences
-
---
-
-- Problem: Job loss isn't completely random
-
---
-
-- Strategy: For each person laid off during panel, match with valid comparison group<sup>1</sup>
-
-.footnote[<code><sup>1</sup> Imai, Kim, & Wang 2023</code>
-      <font style="color:white;font-size:10px;">_</font>]
-
---
-
-- **$Y_1$:** Any person employed &rarr; laid off during panel.
-
---
-
-- **$Y_0$:** Weighted average of all people who ...
- - have the same work history as $Y_1$ prior to when $Y_1$ is laid off 
- - .bold[remain] employed when $Y_1$ is laid off ([see matching example](#matching-demo))
-
---
-
-- $Y_0$ weighted to resemble $Y_1$ using covariate balancing propensity scores (CBPS).<sup>2</sup>
-
-.footnote[<code><sup>2</sup> Imai & Ratkovic 2014</code>] -->
-
 ---
 name: did-methods
 ## **Estimation** | Matching + Weighting --> Difference-in-Differences
@@ -700,6 +668,37 @@ background-size: 70%
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 [Back to Results](#figure-stm)
+
+---
+name: matching-methods
+## **Estimation** | Matching + Weighting
+
+--
+
+- Problem: Job loss isn't completely random
+
+--
+
+- Strategy: For each person laid off during panel, match with valid comparison group<sup>1</sup>
+
+.footnote[<code><sup>1</sup> Imai, Kim, & Wang 2023</code>
+      <font style="color:white;font-size:10px;">_</font>]
+
+--
+
+- **$Y_1$:** Any person employed &rarr; laid off during panel.
+
+--
+
+- **$Y_0$:** Weighted average of all people who ...
+ - have the same work history as $Y_1$ prior to when $Y_1$ is laid off 
+ - .bold[remain] employed when $Y_1$ is laid off ([see matching example](#matching-demo))
+
+--
+
+- $Y_0$ weighted to resemble $Y_1$ using covariate balancing propensity scores (CBPS).<sup>2</sup>
+
+.footnote[<code><sup>2</sup> Imai & Ratkovic 2014</code>]
 
 </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
